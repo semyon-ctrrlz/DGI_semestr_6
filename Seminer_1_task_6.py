@@ -1,3 +1,3 @@
 friends=['Сергей','Соня','Дима','Алина','Егор',]
-index=3
-print('Привет, '+ friends[index] + ', я Максим!')
+count=len(friends)
+print('У тебя', count, 'друзей')
