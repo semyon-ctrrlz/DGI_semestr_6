@@ -1,0 +1,13 @@
+class Song:
+    def __init__(self, title, artist, release_year):
+        self.t = title
+        self.a = artist
+        self.r = release_year
+    def get_info(self):
+        info = {"title": self.t,
+                "artist": self.a,
+                "release_year": self.r}
+        return info
+
+some_song = Song('Какая-то песня', 'Кто-то', 2024) 
+print(some_song.get_info())
