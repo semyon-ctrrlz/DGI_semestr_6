@@ -1,0 +1,17 @@
+class Podcast_Episode:
+    def __init__(self, title, artist, duration, guest):
+        self.t = title
+        self.a = artist
+        self.d = duration
+        self.g = guest
+        self.over_30_min = self.check_is_over_30_min(duration)
+
+    def check_is_over_30_min(self, duration):
+        return(duration > 1800)
+    
+    def __str__(self):
+        string_info = str(self.__dict__)
+        return string_info
+
+some_podcast = Podcast_Episode ('Какой-то подкаст', 'Кто-то', 123456, 'Кто-то другой' )
+print(some_podcast)
