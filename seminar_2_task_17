@@ -1,0 +1,39 @@
+class Audio_Item:
+    def __init__(self, title, artist, is_liked = False):
+        self.t = title
+        self.a = artist
+        self.i = is_liked
+    
+    def like(self):
+        return not self.i
+
+class Song(Audio_Item):
+    def __init__(self, title, artist, release_year): 
+        super().__init__(title, artist)
+        self.r = release_year
+        super().like()
+        
+    def __str__(self):
+        string_info = str(self.__dict__)
+        return string_info
+    
+class Podcast_Episode (Audio_Item):
+    def __init__(self, title, artist, duration, guest): 
+        super().__init__(title, artist)
+        self.d = duration
+        self.g = guest
+        self.over_30_min = self.check_is_over_30_min(duration)
+        super().like()
+
+    def check_is_over_30_min(self, duration):
+        return(duration > 1800)
+    
+    def __str__(self):
+        string_info = str(self.__dict__)
+        return string_info
+
+
+some_song = Song("Какая-то песня", "Кто-то", 2024) 
+print(some_song)
+some_podcast = Podcast_Episode ('Какой-то подкаст', 'Кто-то', 123456, 'Кто-то другой') 
+print(some_podcast)
