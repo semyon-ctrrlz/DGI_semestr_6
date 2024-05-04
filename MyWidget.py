@@ -15,14 +15,14 @@ class MyWidget(QWidget):
 
         self.setLayout(mainLayout)
 
-        self.myLable=QLabel("Кол-во нажатий на кнопку")
+        self.myLabel=QLabel("Кол-во нажатий на кнопку")
         myLable2=QLabel("BBB")
 
         select_file_button = QPushButton('Выбрать файл')
         spectre_button = QPushButton('Показать спектр')
         osc_button = QPushButton('Показать осциллограмму')
 
-        verticalLayout.addWidget(self.myLable)
+        verticalLayout.addWidget(self.myLabel)
         verticalLayout.addWidget(select_file_button)
         verticalLayout.addWidget(spectre_button)
         verticalLayout.addWidget(osc_button)
@@ -38,7 +38,7 @@ class MyWidget(QWidget):
     def select_file(self):
         filename, filter = QFileDialog.getOpenFileName()
         self.audio_item = Audio_Item(filename)
-        self.myLabel.setText(f'Выбранный файл = {filename, filter}')
+        self.myLabel.setText(f'Выбранный файл : {filename}')
         print(self.audio_item)
 
 app=QApplication([])
